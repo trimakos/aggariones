@@ -1,0 +1,43 @@
+<h1>Listing games</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Odd1</th>
+      <th>Odd2</th>
+      <th>Oddx</th>
+      <th>Code</th>
+      <th>Date</th>
+      <th>Oddo</th>
+      <th>Oddu</th>
+      <th>Result</th>
+      <th>Couponid</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @games.each do |game| %>
+      <tr>
+        <td><%= game.odd1 %></td>
+        <td><%= game.odd2 %></td>
+        <td><%= game.oddx %></td>
+        <td><%= game.code %></td>
+        <td><%= game.date %></td>
+        <td><%= game.oddo %></td>
+        <td><%= game.oddu %></td>
+        <td><%= game.result %></td>
+        <td><%= game.couponid %></td>
+        <td><%= link_to 'Show', game %></td>
+        <td><%= link_to 'Edit', edit_game_path(game) %></td>
+        <td><%= link_to 'Destroy', game, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Game', new_game_path %>
